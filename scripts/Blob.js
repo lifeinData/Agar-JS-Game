@@ -1,3 +1,6 @@
+/*jslint indent: 4 */
+/*global define*/
+
 function Blob(x, y, r) {
     this.pos = createVector(x, y);
     this.r = r;
@@ -17,7 +20,7 @@ function Blob(x, y, r) {
         var d = p5.Vector.dist(this.pos, other.pos);
         //checks if the distance between the two centers (big blob vs blob[i]) is smaller than their added radius{
         if (d < this.r + other.r) {
-            this.r += other.r;
+            this.r += sqrt(other.r);
             return true;
         } else {
             return false;
